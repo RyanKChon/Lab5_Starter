@@ -25,7 +25,8 @@ function init() {
   } 
 );
 let volume = document.getElementById('volume');
-let value = volume.value;
+volume.value = 50;
+let value;
 let volImg = document.querySelector('img[alt="Volume level 2"]');
 volume.addEventListener('input', function () {
   value = volume.value;

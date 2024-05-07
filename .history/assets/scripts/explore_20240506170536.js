@@ -28,31 +28,5 @@ function init() {
   if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
-
-  let text = document.getElementById('text-to-speak');
-  let speech;
-  let button = document.querySelector('button');
-  let face = document.querySelector('img[alt="Smiling face"]');
-  button.addEventListener('click' , function () {
-    speech = text.value;
-    const utterance1 = new SpeechSynthesisUtterance(speech);
-    const selectedOption =
-    voiceSelect.selectedOptions[0].getAttribute("data-name");
-    for (let i = 0; i < voices.length; i++) {
-      if (voices[i].name === selectedOption) {
-        utterance1.voice = voices[i];
-      }
-    }
-    synth.speak(utterance1);
-    utterance1.onstart = function(event) {
-      face.src = "assets/images/smiling-open.png";
-    };
-    utterance1.onend = function(event) {
-      face.src = "assets/images/smiling.png";
-    };
-    
-  })
-
-
 }
 

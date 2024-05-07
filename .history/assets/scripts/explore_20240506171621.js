@@ -35,22 +35,9 @@ function init() {
   let face = document.querySelector('img[alt="Smiling face"]');
   button.addEventListener('click' , function () {
     speech = text.value;
+    face.src = "assets/images/smiling-open.png";
     const utterance1 = new SpeechSynthesisUtterance(speech);
-    const selectedOption =
-    voiceSelect.selectedOptions[0].getAttribute("data-name");
-    for (let i = 0; i < voices.length; i++) {
-      if (voices[i].name === selectedOption) {
-        utterance1.voice = voices[i];
-      }
-    }
     synth.speak(utterance1);
-    utterance1.onstart = function(event) {
-      face.src = "assets/images/smiling-open.png";
-    };
-    utterance1.onend = function(event) {
-      face.src = "assets/images/smiling.png";
-    };
-    
   })
 
 

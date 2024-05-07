@@ -4,8 +4,6 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   // TODO
-  
-  const jsConfetti = new JSConfetti();
   let select = document.querySelector('#horn-select');
   let status; 
   let image =  document.querySelector('img[alt="No image selected"]');
@@ -25,7 +23,7 @@ function init() {
   } 
 );
 let volume = document.getElementById('volume');
-let value = volume.value;
+let value;
 let volImg = document.querySelector('img[alt="Volume level 2"]');
 volume.addEventListener('input', function () {
   value = volume.value;
@@ -54,6 +52,7 @@ button.addEventListener('click', function() {
   }
   else if (status == 'party-horn') {
     sound.src = "assets/audio/party-horn.mp3";
+    const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti();
   }
   else{

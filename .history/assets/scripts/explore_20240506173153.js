@@ -35,6 +35,7 @@ function init() {
   let face = document.querySelector('img[alt="Smiling face"]');
   button.addEventListener('click' , function () {
     speech = text.value;
+    face.src = "assets/images/smiling-open.png";
     const utterance1 = new SpeechSynthesisUtterance(speech);
     const selectedOption =
     voiceSelect.selectedOptions[0].getAttribute("data-name");
@@ -45,7 +46,7 @@ function init() {
     }
     synth.speak(utterance1);
     utterance1.onstart = function(event) {
-      face.src = "assets/images/smiling-open.png";
+      face.src = "assets/images/smiling.png";
     };
     utterance1.onend = function(event) {
       face.src = "assets/images/smiling.png";
