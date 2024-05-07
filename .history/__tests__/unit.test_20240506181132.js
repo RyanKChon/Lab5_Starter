@@ -34,5 +34,5 @@ test('correct april 14 2002' , () => {
   expect(isDate("4/14/2002")).toBe(true)
 });
 test('corret may 5 2001 ' , () => {
-  expect(isDate("5/5/2001")).toBe(true)
+  expect(isDate("5/5/2001)").toBe(true)
 });
